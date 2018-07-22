@@ -4,9 +4,9 @@ node_js:
   - node
 script:
   - npm run lerna -- bootstrap
+  - npm run build
   - npm run lint
   - npm run test:coverage
-  - npm run build
 after_success: npm run coveralls
 branches:
   only:
