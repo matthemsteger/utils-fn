@@ -1,6 +1,6 @@
 {
 	"name": "@matthemsteger/utils-fn-fs",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Functional utilities for fs",
 	"main": "dist/index.js",
 	"module": "esm/index.js",
@@ -56,13 +56,13 @@
 		"sinon-chai": "^3.2.0"
 	},
 	"dependencies": {
-		"@matthemsteger/utils-fn-futures": "^1.0.1",
+		"@matthemsteger/utils-fn-futures": "^1.0.2",
 		"glob": "^7.1.2",
 		"md5-file": "^4.0.0",
 		"ramda": "^0.25.0"
 	},
 	"peerDependencies": {
-		"fluture": "^8.0.2",
+		"fluture": "^10.1.0",
 		"folktale": "^2.1.0"
 	}
 }
