@@ -1,43 +1,45 @@
 {
-		"private": true,
-		"scripts": {
-				"lint": "eslint \"**/*.js\" && echo Lint passed.",
-				"mocha": "BABEL_ENV=cjs mocha --recursive -r ./babel.register.js \"packages/*/test/**/*.spec.js\"",
-				"test": "yarn run lint && yarn run mocha",
-				"test:coverage": "nyc --reporter=lcov --reporter=text yarn run mocha",
-				"test:types": "tsc --listFiles",
-				"build": "lerna run build",
-				"coveralls": "nyc report --reporter=text-lcov | coveralls",
-				"prettier": "prettier --write \"packages/*/{src,test}/**/*.js\"",
-				"lerna:bootstrap": "lerna bootstrap",
-				"lerna:clean": "lerna clean",
-				"lerna:add:peer": "lerna add --peer"
-		},
-		"workspaces": [
-				"packages/*"
-		],
-		"devDependencies": {
-				"@babel/cli": "^7.10.4",
-				"@babel/core": "^7.10.4",
-				"@babel/plugin-proposal-class-properties": "^7.10.4",
-				"@babel/plugin-proposal-object-rest-spread": "^7.10.4",
-				"@babel/preset-env": "^7.10.4",
-				"@babel/register": "^7.10.4",
-				"babel-eslint": "^10.1.0",
-				"bundlesize": "^0.18.0",
-				"chai": "^4.2.0",
-				"coveralls": "^3.0.1",
-				"eslint": "^7.3.1",
-				"eslint-config-airbnb-base": "^14.2.0",
-				"eslint-config-prettier": "^6.11.0",
-				"eslint-plugin-import": "^2.13.0",
-				"eslint-plugin-prettier": "^3.1.4",
-				"lerna": "^3.22.1",
-				"mocha": "^8.0.1",
-				"mocha-plugin-fluture": "^0.0.2",
-				"nyc": "^15.1.0",
-				"prettier": "^2.0.5",
-				"sinon": "^9.0.2",
-				"sinon-chai": "^3.5.0"
-		}
+	"private": true,
+	"scripts": {
+		"lint": "eslint \"**/*.js\" && echo Lint passed.",
+		"mocha": "BABEL_ENV=cjs mocha --recursive -r ./babel.register.js \"packages/*/test/**/*.spec.js\"",
+		"test": "yarn run lint && yarn run mocha",
+		"test:coverage": "nyc --reporter=lcov --reporter=text yarn run mocha",
+		"test:types": "tsc --listFiles",
+		"build": "lerna run build",
+		"coveralls": "nyc report --reporter=text-lcov | coveralls",
+		"prettier": "prettier --write \"packages/*/{src,test}/**/*.js\"",
+		"lerna:bootstrap": "lerna bootstrap",
+		"lerna:clean": "lerna clean",
+    "lerna:changed": "lerna changed",
+		"lerna:publish": "lerna publish",
+    "lerna": "lerna"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"devDependencies": {
+		"@babel/cli": "^7.10.4",
+		"@babel/core": "^7.10.4",
+		"@babel/plugin-proposal-class-properties": "^7.10.4",
+		"@babel/plugin-proposal-object-rest-spread": "^7.10.4",
+		"@babel/preset-env": "^7.10.4",
+		"@babel/register": "^7.10.4",
+		"babel-eslint": "^10.1.0",
+		"bundlesize": "^0.18.0",
+		"chai": "^4.2.0",
+		"coveralls": "^3.0.1",
+		"eslint": "^7.3.1",
+		"eslint-config-airbnb-base": "^14.2.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.13.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"lerna": "^3.22.1",
+		"mocha": "^8.0.1",
+		"mocha-plugin-fluture": "^0.0.2",
+		"nyc": "^15.1.0",
+		"prettier": "^2.0.5",
+		"sinon": "^9.0.2",
+		"sinon-chai": "^3.5.0"
+	}
 }
