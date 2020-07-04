@@ -1,6 +1,6 @@
 import {describe, it} from 'mocha';
 import {expect} from 'chai';
-import tester from 'mocha-plugin-fluture';
+import {promise} from 'fluture';
 import * as fns from './../src/futurify';
 
 const {futurify, futurifyAll} = fns;
@@ -25,45 +25,34 @@ describe('src/futurify', () => {
 
 	describe('futurify', () => {
 		it('should be a function that takes a single argument', () => {
-			expect(futurify)
-				.to.be.a('function')
-				.with.lengthOf(1);
+			expect(futurify).to.be.a('function').with.lengthOf(1);
 		});
 
 		it('should return a function that takes the same args as passed in nodeback', () => {
 			const nodeback = createNodeback(false);
 			const fn = futurify(nodeback);
 
-			expect(fn)
-				.to.be.a('function')
-				.with.lengthOf(1);
+			expect(fn).to.be.a('function').with.lengthOf(1);
 		});
 
-		it(
-			'should futurify a nodeback',
-			tester(() => {
-				const nodeback = createNodeback(false);
-				const fn = futurify(nodeback);
+		it('should futurify a nodeback', async () => {
+			const nodeback = createNodeback(false);
+			const fn = futurify(nodeback);
+			const result = await promise(fn(3));
 
-				return fn(3).map((result) => expect(result).to.equal(3));
-			})
-		);
+			expect(result).to.equal(3);
+		});
 
-		it(
-			'should futurify a nodeback that returns an error',
-			tester(() => {
-				const nodeback = createNodeback(true);
-				const fn = futurify(nodeback);
+		it('should futurify a nodeback that returns an error', async () => {
+			const nodeback = createNodeback(true);
+			const fn = futurify(nodeback);
 
-				return fn(3)
-					.swap()
-					.map((err) =>
-						expect(err)
-							.to.an('error')
-							.with.property('message', 'blah')
-					);
-			})
-		);
+			try {
+				await fn(3);
+			} catch (err) {
+				expect(err).to.be.an('error').with.property('message', 'blah');
+			}
+		});
 	});
 
 	describe('futurifyAll', () => {
@@ -75,15 +64,9 @@ describe('src/futurify', () => {
 
 			const result = futurifyAll(obj);
 
-			expect(result)
-				.to.have.property('oneFuture')
-				.that.is.a('function');
-			expect(result)
-				.to.have.property('twoFuture')
-				.that.is.a('function');
-			expect(result)
-				.to.have.property('one')
-				.that.is.a('function');
+			expect(result).to.have.property('oneFuture').that.is.a('function');
+			expect(result).to.have.property('twoFuture').that.is.a('function');
+			expect(result).to.have.property('one').that.is.a('function');
 		});
 	});
 });

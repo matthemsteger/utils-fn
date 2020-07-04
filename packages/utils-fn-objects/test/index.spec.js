@@ -11,9 +11,7 @@ import {
 
 const testFnExport = curry((name, fn, length) =>
 	it(`should export a function ${name}`, () => {
-		expect(fn)
-			.to.be.a('function')
-			.with.lengthOf(length);
+		expect(fn).to.be.a('function').with.lengthOf(length);
 	})
 );
 

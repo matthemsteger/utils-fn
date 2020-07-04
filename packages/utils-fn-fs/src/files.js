@@ -24,12 +24,7 @@ import {md5File, fs} from './external';
  */
 export function fileMeta(filePath) {
 	return compose(
-		map(
-			compose(
-				assoc('filePath', filePath),
-				objOf('hash')
-			)
-		),
+		map(compose(assoc('filePath', filePath), objOf('hash'))),
 		md5File
 	)(filePath);
 }
@@ -50,7 +45,4 @@ export const readUtf8File = converge(fs.readFileFuture, [
  * @param {string} filePath
  * @returns {Future<T>}
  */
-export const readJSONFile = compose(
-	chain(encase(JSON.parse)),
-	readUtf8File
-);
+export const readJSONFile = compose(chain(encase(JSON.parse)), readUtf8File);

@@ -32,8 +32,5 @@ export const renameKeys = curry((keysMap, obj) =>
 );
 
 export const deriveObjFromPaths = curry((paths, props) =>
-	compose(
-		zipObj(props),
-		propsPath(paths)
-	)
+	compose(zipObj(props), propsPath(paths))
 );
