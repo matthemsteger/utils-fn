@@ -1,6 +1,6 @@
 import {curry, compose, map, find, equals, ifElse, propEq, always} from 'ramda';
-import Maybe from 'folktale/maybe';
-import {chainRej, of as futureOf, reject} from 'fluture';
+import {maybe} from 'folktale';
+import {chainRej, reject, resolve} from 'fluture';
 import {fs} from './external';
 
 /**
@@ -11,12 +11,7 @@ import {fs} from './external';
  */
 export const maybeDirHasFile = curry((fileName, directoryPath) =>
 	compose(
-		map(
-			compose(
-				Maybe.fromNullable,
-				find(equals(fileName))
-			)
-		),
+		map(compose(maybe.fromNullable, find(equals(fileName)))),
 		fs.readdirFuture
 	)(directoryPath)
 );
@@ -27,6 +22,6 @@ export const maybeDirHasFile = curry((fileName, directoryPath) =>
  * @returns {Future<void>}
  */
 export const ensureDirectory = compose(
-	chainRej(ifElse(propEq('code', 'EEXIST'), always(futureOf()), reject)),
+	chainRej(ifElse(propEq('code', 'EEXIST'), always(resolve()), reject)),
 	(dirPath) => fs.mkdirFuture(dirPath)
 );

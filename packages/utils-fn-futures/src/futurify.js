@@ -45,11 +45,7 @@ export const futurifyAll = compose(
 	chain(
 		compose(
 			when(
-				compose(
-					is(Function),
-					last,
-					head
-				),
+				compose(is(Function), last, head),
 				compose(
 					([key, value]) => [
 						[key, value],

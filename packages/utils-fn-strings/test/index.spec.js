@@ -4,9 +4,7 @@ import {pad} from './../src';
 
 describe('src/index', () => {
 	it('should export a function pad', () => {
-		expect(pad)
-			.to.be.a('function')
-			.with.lengthOf(2);
+		expect(pad).to.be.a('function').with.lengthOf(2);
 	});
 
 	describe('pad', () => {

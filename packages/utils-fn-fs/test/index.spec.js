@@ -1,6 +1,6 @@
 import {describe, it} from 'mocha';
 import {expect} from 'chai';
-import * as fs from './../src';
+import * as fs from '../src';
 
 describe('src/index', () => {
 	[

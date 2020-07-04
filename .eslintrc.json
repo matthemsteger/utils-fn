@@ -1,8 +1,9 @@
 {
 	"parser": "babel-eslint",
-	"extends": ["plugin:prettier/recommended", "airbnb-base"],
+	"extends": ["plugin:prettier/recommended", "airbnb-base", "prettier"],
 	"env": {
-		"shared-node-browser": true
+		"shared-node-browser": true,
+		"mocha": true
 	},
 	"rules": {
 		"linebreak-style": 0,
@@ -15,6 +16,7 @@
 		"object-curly-spacing": [2, "never"],
 		"implicit-arrow-linebreak": 0,
 		"import/no-useless-path-segments": 0,
-		"object-curly-newline": 0
+		"object-curly-newline": 0,
+    "import/no-extraneous-dependencies": 0
 	}
 }
