@@ -32,6 +32,6 @@
 		"ramda": "^0.27.1"
 	},
 	"peerDependencies": {
-		"fluture": "^12.3.1"
+		"fluture": "^14.0.0"
 	}
 }
