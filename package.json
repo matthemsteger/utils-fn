@@ -14,7 +14,9 @@
 		"release": "yarn run build && changeset publish",
 		"postinstall": "preconstruct dev"
 	},
-	"workspaces": ["packages/*"],
+	"workspaces": [
+		"packages/*"
+	],
 	"devDependencies": {
 		"@babel/cli": "^7.13.16",
 		"@babel/core": "^7.14.0",
@@ -41,6 +43,8 @@
 		"sinon-chai": "^3.6.0"
 	},
 	"preconstruct": {
-		"packages": ["packages/*"]
+		"packages": [
+			"packages/*"
+		]
 	}
 }

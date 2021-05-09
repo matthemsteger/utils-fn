@@ -4,7 +4,6 @@ node_js:
   - node
 cache: yarn
 script:
-  - yarn run lerna:bootstrap
   - yarn run build
   - yarn run lint
   - yarn run test:coverage
