@@ -1,6 +1,6 @@
 {
 	"name": "@matthemsteger/utils-fn-objects",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Functional utilities for objects",
 	"main": "dist/matthemsteger-utils-fn-objects.cjs.js",
 	"module": "dist/matthemsteger-utils-fn-objects.esm.js",
