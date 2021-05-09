@@ -1,6 +1,6 @@
 {
 	"name": "@matthemsteger/utils-fn-strings",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Functional utilities for strings",
 	"main": "dist/matthemsteger-utils-fn-strings.cjs.js",
 	"module": "dist/matthemsteger-utils-fn-strings.esm.js",

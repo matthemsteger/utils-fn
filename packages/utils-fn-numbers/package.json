@@ -1,6 +1,6 @@
 {
 	"name": "@matthemsteger/utils-fn-numbers",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Functional utilities for numbers",
 	"main": "dist/matthemsteger-utils-fn-numbers.cjs.js",
 	"module": "dist/matthemsteger-utils-fn-numbers.esm.js",

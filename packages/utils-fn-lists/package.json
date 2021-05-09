@@ -1,6 +1,6 @@
 {
 	"name": "@matthemsteger/utils-fn-lists",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Functional utilities for iterables",
 	"main": "dist/matthemsteger-utils-fn-lists.cjs.js",
 	"module": "dist/matthemsteger-utils-fn-lists.esm.js",
@@ -28,7 +28,7 @@
 		"npm-run-all": "^4.1.5"
 	},
 	"dependencies": {
-		"@matthemsteger/utils-fn-numbers": "^2.0.0",
+		"@matthemsteger/utils-fn-numbers": "^2.0.1",
 		"ramda": "^0.27.1"
 	}
 }
