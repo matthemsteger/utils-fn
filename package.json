@@ -5,7 +5,7 @@
 		"build:watch": "preconstruct watch",
 		"build": "preconstruct build",
 		"lint": "eslint \"**/*.js\" && echo Lint passed.",
-		"mocha": "BABEL_ENV=cjs mocha --recursive -r ./babel.register.js \"packages/*/test/**/*.spec.js\"",
+		"mocha": "mocha --recursive -r ./babel.register.js \"packages/*/test/**/*.spec.js\"",
 		"test": "yarn run lint && yarn run mocha",
 		"test:coverage": "nyc --reporter=lcov --reporter=text yarn run mocha",
 		"test:types": "tsc --listFiles",
