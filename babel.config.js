@@ -1,15 +1,12 @@
 module.exports = function babelConfig(api) {
-	api.cache.using(() => process.env.BABEL_ENV);
-
-	const modules = process.env.BABEL_ENV === 'cjs' ? 'cjs' : false;
+	api.cache(true);
 	const presets = [
 		[
 			'@babel/preset-env',
 			{
 				targets: {
-					node: '12.14.1'
-				},
-				modules
+					node: '14.16.1'
+				}
 			}
 		]
 	];
