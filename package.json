@@ -12,6 +12,7 @@
 		"coveralls": "nyc report --reporter=text-lcov | coveralls",
 		"prettier": "prettier --write \"packages/*/{src,test}/**/*.js\"",
 		"release": "yarn run build && changeset publish",
+    "version": "changeset version && yarn install --skip-builds",
 		"postinstall": "preconstruct dev"
 	},
 	"workspaces": [
