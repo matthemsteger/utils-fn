@@ -1842,7 +1842,7 @@ __metadata:
     npm-run-all: ^4.1.5
     ramda: ^0.27.1
   peerDependencies:
-    fluture: ^12.3.1
+    fluture: ^14.0.0
     folktale: ^2.1.0
   languageName: unknown
   linkType: soft
@@ -1856,7 +1856,7 @@ __metadata:
     npm-run-all: ^4.1.5
     ramda: ^0.27.1
   peerDependencies:
-    fluture: ^12.3.1
+    fluture: ^14.0.0
   languageName: unknown
   linkType: soft
 
